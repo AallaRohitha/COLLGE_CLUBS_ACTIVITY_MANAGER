@@ -135,4 +135,4 @@ Add your screenshots here (login page, student dashboard, clubs page, admin pane
 
 ## Author
 
-Your Name, Department of Computer Science and Engineering, LBRCE
+Aalla Rohitha, Department of Computer Science and Engineering, LBRCE
