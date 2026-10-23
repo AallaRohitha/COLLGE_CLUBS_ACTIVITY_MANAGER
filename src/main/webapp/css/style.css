@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --accent: #7c3aed;
+  --bg: #f3f4f9;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --green: #16a34a;
+  --red: #dc2626;
+  --amber: #d97706;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(79, 70, 229, 0.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', Arial, sans-serif; background: var(--bg); color: var(--text); }
+a { color: var(--primary); text-decoration: none; }
+
+/* ---------- Login / Register ---------- */
+.auth-wrap { display: flex; min-height: 100vh; }
+.auth-left {
+  flex: 1; color: #fff; padding: 60px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
+  position: relative; overflow: hidden;
+}
+.auth-left::before, .auth-left::after {
+  content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,0.08);
+}
+.auth-left::before { width: 360px; height: 360px; top: -120px; right: -100px; }
+.auth-left::after  { width: 260px; height: 260px; bottom: -90px; left: -70px; }
+.auth-left .college { letter-spacing: 3px; font-size: 14px; opacity: .85; margin-bottom: 14px; }
+.auth-left h1 { font-size: 40px; line-height: 1.2; margin-bottom: 16px; position: relative; }
+.auth-left p { font-size: 16px; opacity: .9; max-width: 420px; line-height: 1.7; position: relative; }
+.auth-left ul { margin-top: 28px; list-style: none; position: relative; }
+.auth-left li { margin: 10px 0; font-size: 15px; }
+.auth-left li::before { content: "\2713"; margin-right: 10px; background: rgba(255,255,255,.2);
+  border-radius: 50%; padding: 2px 7px; }
+
+.auth-right { flex: 1; display: flex; align-items: center; justify-content: center; padding: 30px; background: #fff; }
+.auth-card { width: 100%; max-width: 380px; }
+.auth-card h2 { font-size: 28px; margin-bottom: 6px; }
+.auth-card .sub { color: var(--muted); margin-bottom: 26px; font-size: 14px; }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 12px 14px; border: 1.5px solid #e5e7eb; border-radius: 10px;
+  font-family: inherit; font-size: 14px; outline: none; transition: .2s; background: #fafafa;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(79,70,229,.12);
+}
+
+.btn {
+  display: inline-block; padding: 12px 22px; border: none; border-radius: 10px; cursor: pointer;
+  font-family: inherit; font-size: 14px; font-weight: 600; color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent)); transition: .2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(79,70,229,.3); }
+.btn-block { width: 100%; }
+.btn-green { background: var(--green); }
+.btn-red { background: var(--red); }
+.btn-small { padding: 7px 14px; font-size: 12px; }
+
+.alert { padding: 12px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 18px; }
+.alert-error { background: #fee2e2; color: #991b1b; }
+.alert-ok { background: #dcfce7; color: #166534; }
+.auth-foot { margin-top: 22px; text-align: center; font-size: 14px; color: var(--muted); }
+
+/* ---------- App layout ---------- */
+.layout { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 250px; background: linear-gradient(180deg, #1e1b4b, #312e81); color: #fff;
+  padding: 24px 16px; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh;
+}
+.brand { padding: 0 10px 20px; border-bottom: 1px solid rgba(255,255,255,.12); margin-bottom: 18px; }
+.brand .b1 { font-size: 12px; letter-spacing: 3px; opacity: .7; }
+.brand .b2 { font-size: 19px; font-weight: 700; margin-top: 4px; }
+.userbox { background: rgba(255,255,255,.08); border-radius: 12px; padding: 12px; margin-bottom: 18px; }
+.userbox .uname { font-weight: 600; font-size: 14px; }
+.role-tag { display: inline-block; margin-top: 6px; font-size: 11px; padding: 3px 10px; border-radius: 20px;
+  background: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+.nav a {
+  display: block; color: #c7d2fe; padding: 11px 14px; border-radius: 10px; margin-bottom: 4px; font-size: 14px; transition: .2s;
+}
+.nav a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.nav .sec { font-size: 11px; letter-spacing: 2px; opacity: .5; margin: 16px 14px 8px; }
+.logout { margin-top: auto; background: rgba(239,68,68,.18); color: #fecaca !important; text-align: center; }
+
+.content { flex: 1; padding: 34px 40px; }
+.topline h1 { font-size: 26px; }
+.topline p { color: var(--muted); margin-top: 4px; font-size: 14px; }
+
+/* ---------- Cards, stats, tables ---------- */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 26px 0; }
+.stat { background: var(--card); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow);
+  border-left: 5px solid var(--primary); }
+.stat:nth-child(2) { border-color: var(--accent); }
+.stat:nth-child(3) { border-color: var(--green); }
+.stat:nth-child(4) { border-color: var(--amber); }
+.stat .num { font-size: 32px; font-weight: 700; }
+.stat .lbl { color: var(--muted); font-size: 13px; }
+
+.card { background: var(--card); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); margin-bottom: 22px; }
+.card h3 { margin-bottom: 12px; font-size: 18px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
+.club-card { transition: .25s; }
+.club-card:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(79,70,229,.2); }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; padding: 12px; background: #eef2ff; color: var(--primary-dark); font-weight: 600; }
+td { padding: 12px; border-bottom: 1px solid #eef0f6; }
+tr:nth-child(even) td { background: #fafbff; }
+
+.badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badge-pending { background: #fef3c7; color: #92400e; }
+.badge-ok { background: #dcfce7; color: #166534; }
+.badge-no { background: #fee2e2; color: #991b1b; }
+
+.footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 30px; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 800px) {
+  .auth-left { display: none; }
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; }
+  .content { padding: 22px 18px; }
+}
+
+/* ---------- Step 2 additions ---------- */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-row .full { grid-column: 1 / -1; }
+.field textarea { min-height: 90px; resize: vertical; }
+.inline { display: inline; }
+.actions { white-space: nowrap; }
+.actions .btn, .actions a.btn { margin-right: 4px; }
+.btn-grey { background: #6b7280; }
+.badge-student { background: #e0e7ff; color: #3730a3; }
+.badge-coordinator { background: #ede9fe; color: #5b21b6; }
+.empty { color: var(--muted); padding: 14px 0; }
+.table-wrap { overflow-x: auto; }
+@media (max-width: 800px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ---------- Step 3 additions ---------- */
+.search-bar { display: flex; gap: 10px; margin: 22px 0 6px; max-width: 520px; }
+.search-bar input { flex: 1; padding: 11px 14px; border: 1.5px solid #e5e7eb; border-radius: 10px;
+  font-family: inherit; font-size: 14px; outline: none; }
+.search-bar input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79,70,229,.12); }
+.club-card h3 { color: var(--primary-dark); margin-bottom: 8px; }
+.club-card .desc { color: var(--muted); font-size: 14px; line-height: 1.6; min-height: 66px; }
+.club-card .meta { font-size: 13px; margin: 14px 0; color: var(--text); }
+.club-card .meta span { display: block; margin-bottom: 4px; }
+.readonly { background: #f3f4f6 !important; color: #6b7280; }
+
+/* ---------- Step 4 additions ---------- */
+.event-card h3 { color: var(--primary-dark); margin-bottom: 6px; }
+.event-card .club-name { font-size: 12px; font-weight: 600; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; }
+.event-card .desc { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 8px 0; }
+.event-card .meta { font-size: 13px; margin: 12px 0; }
+.event-card .meta span { display: block; margin-bottom: 4px; }
+.seats-left { font-weight: 600; color: var(--green); }
+.seats-low { color: var(--amber); }
+.reason-cell { max-width: 260px; font-size: 13px; color: #4b5563; }
+.note { background: #eef2ff; color: #3730a3; padding: 14px 16px; border-radius: 10px; font-size: 14px; line-height: 1.6; }
+
+/* ---------- Step 5 additions ---------- */
+.event-img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; background: #eef2ff; }
+.preview-img { max-width: 220px; max-height: 140px; border-radius: 10px; display: block; margin-bottom: 10px; }
+.ann-item { border-left: 4px solid var(--accent); background: #f8f9ff; padding: 12px 16px; border-radius: 8px; margin-bottom: 12px; }
+.ann-top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+.ann-top span { color: var(--muted); font-size: 12px; }
+.ann-item p { font-size: 14px; line-height: 1.6; color: #374151; }
+.check { font-size: 14px; display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.check input { width: auto; }
+.quick { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---------- Step 6 additions ---------- */
+.zoomable { cursor: zoom-in; }
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; align-items: center;
+  justify-content: center; z-index: 1000; cursor: zoom-out; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92%; max-height: 92%; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+.thumb { width: 72px; height: 48px; object-fit: cover; border-radius: 6px; background: #eef2ff; }
+
+/* ---------- Step 7 additions ---------- */
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-logo { width: 46px; height: 46px; object-fit: contain; background: #fff; border-radius: 10px; padding: 3px; }
+.auth-logo { width: 84px; height: 84px; object-fit: contain; background: #fff; border-radius: 16px; padding: 6px;
+  margin-bottom: 18px; position: relative; }
+.session-box { background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px 12px; font-size: 12px;
+  color: #c7d2fe; margin-bottom: 14px; line-height: 1.7; }
+.session-box b { color: #fff; }
+.club-img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; background: #eef2ff; display: block; }
+.club-card h3 a { color: var(--primary-dark); }
+.club-card h3 a:hover { text-decoration: underline; }
+.club-header { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+.club-header img.big { width: 260px; height: 170px; object-fit: cover; border-radius: 12px; background: #eef2ff; }
+.club-header .info { flex: 1; min-width: 240px; }
+.club-header .info p { color: #4b5563; line-height: 1.7; margin: 8px 0 14px; }
+.badge-coord { background: #ede9fe; color: #5b21b6; margin-left: 6px; }
+
+/* ---------- Logo fix: bigger logo, placed in the corner ---------- */
+:root { --auth-logo: 104px; --side-logo: 62px; }
+
+/* login and register: logo + college name in the top-left corner of the purple panel */
+.auth-top { position: absolute; top: 30px; left: 60px; display: flex; align-items: center; gap: 18px; z-index: 2; }
+.auth-top .auth-logo { width: var(--auth-logo); height: var(--auth-logo); margin: 0; padding: 8px;
+  background: #fff; border-radius: 20px; object-fit: contain; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+.auth-top .auth-college { font-size: 15px; font-weight: 600; line-height: 1.5; letter-spacing: .5px; max-width: 240px; }
+.auth-top .auth-college small { display: block; font-weight: 400; opacity: .8; letter-spacing: 1px; }
+.auth-left { padding-top: 150px; }
+
+/* phones: the purple panel is hidden, so show the logo above the form */
+.mobile-logo { display: none; }
+@media (max-width: 800px) {
+  .mobile-logo { display: block; width: 90px; height: 90px; object-fit: contain; margin: 0 auto 18px; }
+}
+
+/* menu: bigger logo in the top-left corner with the college name */
+.brand { gap: 12px; align-items: center; }
+.brand-logo { width: var(--side-logo); height: var(--side-logo); padding: 5px; border-radius: 14px; flex-shrink: 0; }
+.brand .b-title { font-size: 21px; font-weight: 700; line-height: 1.1; }
+.brand .b-sub { font-size: 10px; opacity: .75; line-height: 1.4; margin-top: 4px; letter-spacing: .3px; }
+
+/* Logo above the heading */
+.auth-left { padding-top: 60px; }
+.auth-top {
+  position: static;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+.auth-top .auth-college { max-width: none; font-size: 14px; letter-spacing: 1px; }
+.auth-top .auth-college small { display: none; }
