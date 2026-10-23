@@ -1,0 +1,27 @@
+# Java / Eclipse
+*.class
+bin/
+build/
+target/
+.classpath
+.project
+.settings/
+.metadata/
+
+# Tomcat / logs
+*.log
+*.war
+.tomcat/
+
+# Database driver (download it yourself, see README)
+src/main/webapp/WEB-INF/lib/*.jar
+
+# Uploaded images (saved in the user's home folder: club_uploads)
+club_uploads/
+
+# Other IDEs and OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
